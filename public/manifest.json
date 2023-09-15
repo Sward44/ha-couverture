@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ha Couverture",
+  "name": "Ha Couverture - Entrepreneur",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "ha-couverture-ico.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
@@ -13,9 +13,13 @@
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "ha-couverture-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "logo-ha-couverture.svg",
+      "type": "image/svg"
     }
   ],
   "start_url": ".",

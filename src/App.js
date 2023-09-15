@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Outlet } from "react-router-dom";
+import styles from "./App.module.scss";
+import Header from "./pages/header/Header";
+import Footer from "./pages/footer/Footer";
+import FormAdd from "./components/form/FormAdd";
 
 function App() {
+  // const [popup, setPopup] = useState(false);
+
+  // function handlePopup() {
+  //   setPopup(false);
+  // }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header></Header>
+      <main>
+        <Outlet />
+      </main>
+      {/* {popup && <FormAdd />} */}
+      <Footer></Footer>
+    </>
   );
 }
 

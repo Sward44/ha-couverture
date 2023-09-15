@@ -1,0 +1,29 @@
+svg {
+
+  .cls {
+      fill: #fff;
+    }
+  .cls1 {
+      fill: #333333;
+    }
+  .cls2 {
+  fill: #4a0b06;
+  }
+
+  .cls3 {
+  fill: #000102;
+  }
+
+  .cls4 {
+  fill: var(--shining);
+  }
+  &:hover{
+      transition: all 0.25s;
+      scale: 102%;
+
+      .cls1 {
+          transition: all 0.25s;
+          fill: var(--shining);
+          }
+        }
+}

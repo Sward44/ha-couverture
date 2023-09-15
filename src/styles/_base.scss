@@ -1,0 +1,76 @@
+:root {
+    --font-family: "Muli", sans-serif;
+    --light: #c6e6f1;
+    --primary: #2071e7;
+    --dark: #2980b9;
+    --text-dark: #333;
+    --text-light:#ddd;
+    --background: #1D1C1B;
+    --hint: #999;
+    --border: #ddd;
+    --shining: #fc0;
+    --button:green;
+  }
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text);
+    font-size: 1.6rem;
+    padding: 0;
+    margin: 0;
+
+}
+
+p {
+    margin: 0.5rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0.5rem 0;
+}
+
+ul {
+    list-style: none;
+}
+
+hr {
+    margin-bottom: 2rem;
+}
+
+a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all 0.25s;
+    &:hover {
+        color: var(--shining);
+    }
+}
+
+button {
+    min-width: 4.5rem;
+    min-height: 4.5rem;
+    background-color: var(--text-light);
+    border: 1px solid var(--text-light);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        scale: 105%;
+        background-color: var(--shining);
+        z-index:11;
+    }
+    i {
+    font-size: 3rem;
+    color: var(--text-dark);
+    }
+}
+

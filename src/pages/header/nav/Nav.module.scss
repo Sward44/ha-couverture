@@ -1,0 +1,39 @@
+.relatif {
+  position: relative;
+  .paragraphe {
+    position:absolute;
+    justify-content:flex-start;
+    overflow-x:hidden;
+    right:45px;
+    top:0px;
+    padding-left: 8px;
+    min-height: 4.5rem;
+    width:45px;
+    border: 1px solid var(--text-light);
+    background-color: var(--text-light);
+    border-radius: 5px;
+    transition: .8s ease;
+    .taille {
+      font-size: 3rem;
+      color: var(--text-dark);
+      padding-right: 1rem;  
+    }
+    p {
+      color: var(--text-dark);
+      white-space: nowrap;
+    }
+    &:hover{
+      justify-content:flex-start;
+      width: 190px;
+      transform: scale(1.1);
+      transition: .8s ease;
+      border: none;
+      background-color: var(--shining);
+      z-index: 1;
+      text-overflow: ellipsis;
+      }
+
+}
+
+}
+
