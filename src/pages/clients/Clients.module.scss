@@ -1,0 +1,17 @@
+.fondStars {
+  margin: auto 5rem auto 0;
+}
+.fondCard {
+  background-color: var(--fond-card);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 1px var(--shadow);
+  margin-bottom: 3rem;
+  transition: box-shadow 0.3s, scale 0.3s;
+  &:hover {
+    box-shadow: 5px 8px 18px 4px var(--shadow);
+    scale: 1.01;
+  }
+}
+.shinning {
+  background-color: var(--shining);
+}

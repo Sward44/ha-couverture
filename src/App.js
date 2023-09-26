@@ -1,26 +1,33 @@
 import { Outlet } from "react-router-dom";
-import styles from "./App.module.scss";
 import Header from "./pages/header/Header";
 import Footer from "./pages/footer/Footer";
-import FormAdd from "./components/form/FormAdd";
+import { useMediaQuery } from "react-responsive";
+import { contextDevice } from "./components/context/contextMobile";
 
-function App() {
-  // const [popup, setPopup] = useState(false);
-
-  // function handlePopup() {
-  //   setPopup(false);
-  // }
+export default function App() {
+  const isMobile = useMediaQuery({ maxWidth: 480 });
+  const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 767 });
+  const isLaptop = useMediaQuery({ minWidth: 768, maxWidth: 979 });
+  const isDesktop = useMediaQuery({ minWidth: 980 });
 
   return (
     <>
-      <Header></Header>
-      <main>
-        <Outlet />
-      </main>
-      {/* {popup && <FormAdd />} */}
-      <Footer></Footer>
+      <contextDevice.Provider
+        value={{ isMobile, isTablet, isLaptop, isDesktop }}
+      >
+        <div
+          style={{
+            backgroundColor: "var(--fond-header)",
+            boxShadow: "0px 2px 10px 1px var(--shadow)",
+          }}
+        >
+          <Header />
+        </div>
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </contextDevice.Provider>
     </>
   );
 }
-
-export default App;

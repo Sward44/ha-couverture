@@ -3,7 +3,7 @@
 }
 
 .flex-row {
-  flex-direction: row ;
+  flex-direction: row;
 }
 
 .no-wrap {
@@ -25,6 +25,9 @@
 .justify-content-center {
   justify-content: center;
 }
+.justify-content-right {
+  justify-content: flex-end;
+}
 
 .justify-around {
   justify-content: space-around;
@@ -45,7 +48,9 @@
 .align-self-center {
   align-self: center;
 }
-
+.align-items-right {
+  align-items: flex-end;
+}
 .block {
-  display:block;
+  display: block;
 }

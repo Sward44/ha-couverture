@@ -1,19 +1,70 @@
+import { useState, useEffect, useCallback, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 import Logo from "../logo/Logo";
 import Nav from "./nav/Nav";
+import NavBurger from "./nav/NavBurger";
+import LogoFooter from "../logo/LogoFooter";
+import { contextDevice } from "../../components/context/contextMobile";
 
 function Header() {
+  const Device = useContext(contextDevice);
+  const [y, setY] = useState(window.scrollY);
+  const [scroll, setScroll] = useState(true);
+  const ref = useRef(null);
+  const handleNavigation = useCallback(
+    (e) => {
+      const window = e.currentTarget;
+      if (y > window.scrollY && y > 105) {
+        setScroll(true);
+        console.log("scrolling up");
+      } else if (y < window.scrollY) {
+        setScroll(false);
+        console.log("scrolling down");
+      }
+      setY(window.scrollY);
+    },
+    [y]
+  );
+
+  useEffect(() => {
+    setY(window.scrollY);
+    window.addEventListener("scroll", handleNavigation);
+
+    return () => {
+      window.removeEventListener("scroll", handleNavigation);
+    };
+  }, [handleNavigation]);
+
   return (
-    <header>
-      <div className="d-flex flex-row flex-fill m-10">
-        <div className="dflex flex-fill">
-          <Link to="/">
-            <Logo />
-          </Link>
+    <CSSTransition
+      in={scroll}
+      nodeRef={ref}
+      timeout={300}
+      unmountOnExit
+      classNames="stickyNav"
+    >
+      <header>
+        <div ref={ref}>
+          <div
+            className={`d-flex flex-row flex-fill ${
+              Device.isMobile ? `py-5 px-10` : `p-10`
+            }`}
+          >
+            <div className="d-flex flex-fill align-items-center">
+              <Link to="/">
+                {Device.isMobile && <LogoFooter />}{" "}
+                {Device.isTablet ||
+                  Device.isLaptop ||
+                  (Device.isDesktop && <Logo />)}
+              </Link>
+            </div>
+            <Nav />
+            <NavBurger />
+          </div>
         </div>
-        <Nav />
-      </div>
-    </header>
+      </header>
+    </CSSTransition>
   );
 }
 

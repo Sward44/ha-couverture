@@ -1,9 +1,10 @@
 import styles from "./Logo.module.scss";
+import dataMobile from "../../App";
 
 function LogoFooter() {
   return (
     <svg
-      height="8rem"
+      height={dataMobile ? "5rem" : "8rem"}
       id="a"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 142 100"

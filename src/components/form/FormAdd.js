@@ -4,11 +4,17 @@ import styles from "./FormAdd.module.scss";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import ReactCountryFlag from "react-country-flag";
 
-function FormAdd({ onNewEmailReceive, handlePopup }) {
+function FormAdd({ handleForm }) {
   const [isLoading, setIsLoading] = useState(false);
+  const [popup, setPopup] = useState(true);
   const isFinish = useRef(false);
-
+  const options = [
+    { optionValue: "+33", valueFlag: "FR" },
+    { optionValue: "+44", valueFlag: "GB" },
+    { optionValue: "+1", valueFlag: "US" },
+  ];
   const defaultValues = {
     email: "",
   };
@@ -54,7 +60,6 @@ function FormAdd({ onNewEmailReceive, handlePopup }) {
         const newEmailFooter = await response.json();
         isFinish.current = true;
         reset();
-        // onNewEmailReceive(newEmailFooter);
       } else {
         setError("generic", {
           type: "generic",
@@ -84,7 +89,7 @@ function FormAdd({ onNewEmailReceive, handlePopup }) {
           className={`${styles.containerFormulaire} d-flex flex-column p-20`}
         >
           <h2 className="mb-20">Devis</h2>
-          <button onClick={handlePopup}>Ok </button>
+          <button onClick={handleForm}>Ok </button>
         </div>
       ) : (
         <div className={`${styles.containerFormulaire} `}>
@@ -92,7 +97,7 @@ function FormAdd({ onNewEmailReceive, handlePopup }) {
             <div className="d-flex flex-row mb-20">
               <h2 className="flex-fill">Devis</h2>
               <i
-                onClick={handlePopup}
+                onClick={handleForm}
                 className={`fa-solid fa-xmark ${styles.mark}`}
               ></i>
             </div>
@@ -112,7 +117,7 @@ function FormAdd({ onNewEmailReceive, handlePopup }) {
             {errors?.surname && <p>{errors.required.message}</p>}
             <label htmlFor="number">Numéro</label>
             <div className="d-flex flex-row">
-              {/* <select
+              <select
                 id="indicatif"
                 {...register("indicatif")}
                 className="mb-10"
@@ -123,7 +128,7 @@ function FormAdd({ onNewEmailReceive, handlePopup }) {
                     {option.optionValue}
                   </option>
                 ))}
-              </select> */}
+              </select>
               <input
                 {...register("number", { valueAsNumber: true })}
                 className="flex-fill mb-10"
@@ -134,11 +139,16 @@ function FormAdd({ onNewEmailReceive, handlePopup }) {
             <textarea
               {...register("comments")}
               className="mb-20"
-              placeholder="Donner le type d'activité"
+              placeholder="Préciser votre demande..."
             ></textarea>
-            <button disabled={isSubmitting}>
-              <i className="fa-solid fa-paper-plane mr-20"></i>Envoyer
-            </button>
+            <div className="d-flex justify-content-center">
+              <button disabled={isSubmitting} className={styles.formatButton}>
+                <div className={`d-flex flex-row justify-content-center`}>
+                  <i className="fa-solid fa-paper-plane mr-20"></i>
+                  <h3>Envoyer</h3>
+                </div>
+              </button>
+            </div>
           </form>
         </div>
       )}

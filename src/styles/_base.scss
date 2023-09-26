@@ -1,32 +1,48 @@
+@use "media-queries" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-    --font-family: "Muli", sans-serif;
-    --light: #c6e6f1;
-    --primary: #2071e7;
-    --dark: #2980b9;
-    --text-dark: #333;
-    --text-light:#ddd;
-    --background: #1D1C1B;
-    --hint: #999;
-    --border: #ddd;
-    --shining: #fc0;
-    --button:green;
-  }
+  --font-family: "Muli", sans-serif;
+  --light: #f3eeec;
+  --primary: #2071e7;
+  --dark: #2980b9;
+  --text-dark: #333;
+  --text-light: #ddd;
+  --background: #1d1c1b;
+  --hint: #999;
+  --border: #ddd;
+  --shining: #fc0;
+  --button: green;
+  --shadow: rgba(3, 3, 3, 0.15);
+  --fond-card: rgba(255, 255, 255, 0.93);
+  --fond-header: #fff;
+}
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: var(--font-family);
-    color: var(--text);
-    font-size: 1.6rem;
-    padding: 0;
-    margin: 0;
-
+  font-family: var(--font-family);
+  color: var(--text);
+  font-size: 1.6rem;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: var(--light);
+  background-image: url("../pages/logo/logo.svg");
+  background-size: 800px;
 }
 
 p {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 h1,
@@ -35,42 +51,47 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 hr {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: all 0.25s;
-    &:hover {
-        color: var(--shining);
-    }
+  color: var(--text-light);
+  text-decoration: none;
+  transition: all 0.25s;
+  &:hover {
+    color: var(--shining);
+  }
 }
 
 button {
-    min-width: 4.5rem;
-    min-height: 4.5rem;
-    background-color: var(--text-light);
-    border: 1px solid var(--text-light);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    &:hover {
-        scale: 105%;
-        background-color: var(--shining);
-        z-index:11;
+  min-width: 4.5rem;
+  min-height: 4.5rem;
+  background-color: var(--text-light);
+  border: 1px solid var(--text-light);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  @include xs {
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+  }
+  &:hover {
+    scale: 105%;
+    background-color: var(--shining);
+    @include xs {
+      scale: unset;
     }
-    i {
+  }
+  i {
     font-size: 3rem;
     color: var(--text-dark);
-    }
+  }
 }
-

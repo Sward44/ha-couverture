@@ -1,12 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import HomePage from "./pages/homepage/HomePage";
-import Certifications from "./pages/homepage/certications/Certifications";
-import Blogs from "./pages/homepage/blogs/Blogs";
-import Clients from "./pages/homepage/clients/Clients";
-import Rejoindre from "./pages/homepage/rejoindre/Rejoindre";
-import Localisation from "./pages/homepage/localisation/Localisation";
-import Mention from "./pages/homepage/mention/Mention";
+import Blogs from "./pages/blogs/Blogs";
+import Clients from "./pages/clients/Clients";
+import Rejoindre from "./pages/rejoindre/Rejoindre";
+import Localisation from "./pages/localisation/Localisation";
+import Mention from "./pages/mention/Mention";
 
 export const router = createBrowserRouter([
   {
@@ -14,12 +13,8 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <HomePage />,
-      },
-      {
-        path: "/certification",
-        element: <Certifications />,
       },
       {
         path: "/blogs",
