@@ -77,7 +77,7 @@ function FormAdd({ handleForm }) {
 
   return (
     <div
-      className={`${styles.formulaire} d-flex flex-fill align-items-center justify-content-center`}
+      className={`${styles.formulaire} dFlex flexFill alignItemsCenter justifyContentCenter`}
     >
       {isLoading && (
         <i
@@ -85,17 +85,15 @@ function FormAdd({ handleForm }) {
         ></i>
       )}
       {isFinish.current ? (
-        <div
-          className={`${styles.containerFormulaire} d-flex flex-column p-20`}
-        >
+        <div className={`${styles.containerFormulaire} dFlex flexColumn p-20`}>
           <h2 className="mb-20">Devis</h2>
           <button onClick={handleForm}>Ok </button>
         </div>
       ) : (
         <div className={`${styles.containerFormulaire} `}>
-          <form onSubmit={handleSubmit(submit)} className="d-flex flex-column">
-            <div className="d-flex flex-row mb-20">
-              <h2 className="flex-fill">Devis</h2>
+          <form onSubmit={handleSubmit(submit)} className="dFlex flexColumn">
+            <div className="dFlex flexRow mb-20">
+              <h2 className="flexFill">Devis</h2>
               <i
                 onClick={handleForm}
                 className={`fa-solid fa-xmark ${styles.mark}`}
@@ -116,7 +114,7 @@ function FormAdd({ handleForm }) {
             <input {...register("surname")} className="mb-10"></input>
             {errors?.surname && <p>{errors.required.message}</p>}
             <label htmlFor="number">Numéro</label>
-            <div className="d-flex flex-row">
+            <div className="dFlex flexRow">
               <select
                 id="indicatif"
                 {...register("indicatif")}
@@ -131,7 +129,7 @@ function FormAdd({ handleForm }) {
               </select>
               <input
                 {...register("number", { valueAsNumber: true })}
-                className="flex-fill mb-10"
+                className="flexFill mb-10"
               ></input>
               {errors?.number && <p>{errors.number.message}</p>}
             </div>
@@ -141,9 +139,9 @@ function FormAdd({ handleForm }) {
               className="mb-20"
               placeholder="Préciser votre demande..."
             ></textarea>
-            <div className="d-flex justify-content-center">
+            <div className="dFlex justifyContentCenter">
               <button disabled={isSubmitting} className={styles.formatButton}>
-                <div className={`d-flex flex-row justify-content-center`}>
+                <div className={`dFlex flexRow justifyContentCenter`}>
                   <i className="fa-solid fa-paper-plane mr-20"></i>
                   <h3>Envoyer</h3>
                 </div>

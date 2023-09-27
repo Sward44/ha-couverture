@@ -1,6 +1,6 @@
 function Rejoindre() {
   return (
-    <div className="d-flex justify-content-center">
+    <div className="dFlex justifyContentCenter">
       <h2>Rejoindre</h2>
     </div>
   );

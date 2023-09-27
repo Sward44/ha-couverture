@@ -12,7 +12,7 @@ function NavBurger() {
   };
 
   return (
-    <div className="d-flex align-items-center">
+    <div className="dFlex alignItemsCenter">
       {burger ? (
         <div
           onClick={handleBurger}

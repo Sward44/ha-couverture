@@ -5,7 +5,7 @@ import Logo from "../logo/Logo";
 import Nav from "./nav/Nav";
 import NavBurger from "./nav/NavBurger";
 import LogoFooter from "../logo/LogoFooter";
-import { contextDevice } from "../../components/context/contextMobile";
+import { contextDevice } from "../../components/context/contextDevice";
 
 function Header() {
   const Device = useContext(contextDevice);
@@ -47,11 +47,11 @@ function Header() {
       <header>
         <div ref={ref}>
           <div
-            className={`d-flex flex-row flex-fill ${
+            className={`dFlex flexRow flexFill ${
               Device.isMobile ? `py-5 px-10` : `p-10`
             }`}
           >
-            <div className="d-flex flex-fill align-items-center">
+            <div className="dFlex flexFill align-items-center">
               <Link to="/">
                 {Device.isMobile && <LogoFooter />}{" "}
                 {Device.isTablet ||

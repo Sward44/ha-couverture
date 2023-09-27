@@ -15,13 +15,3 @@
   animation: fade-in 0.8s 0.4s backwards;
   text-align: left;
 }
-.enSavoirPlus {
-  transition: color 0.3s;
-  &:hover {
-    color: var(--shining);
-    cursor: pointer;
-  }
-}
-.shining {
-  background-color: var(--shining);
-}

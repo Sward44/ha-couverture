@@ -3,8 +3,8 @@ import LogoFooter from "../logo/LogoFooter";
 
 function Footer() {
   return (
-    <footer className="d-flex flex-row">
-      <div className="d-flex flex-fill flex-column align-items-center justify-content-center">
+    <footer className="dFlex flexRow">
+      <div className="dFlex flexFill flexColumn alignItemsCenter justifyContentCenter">
         <div></div>
 
         <Link to="/">

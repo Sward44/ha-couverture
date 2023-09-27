@@ -1,7 +1,7 @@
 function Blogs() {
   return (
-    <div className={`d-flex justify-content-center`}>
-      <div className={`flex-fill fond`}>
+    <div className={`dFlex justifyContentCenter`}>
+      <div className={`flexFill fond`}>
         <h2>HomePage</h2>
       </div>
       <div className={` imageContaineur`}>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Nav.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { contextDevice } from "../../../components/context/contextMobile";
+import { contextDevice } from "../../../components/context/contextDevice";
 
 function Nav() {
   const Device = useContext(contextDevice);
@@ -12,11 +12,11 @@ function Nav() {
   return (
     <>
       <ul
-        className={`d-flex flex-row ${
+        className={`dFlex flexRow ${
           Device.isMobile ? "" : "m-20"
-        } align-items-center ${styles.relatif}`}
+        } alignItemsCenter ${styles.relatif}`}
       >
-        <div className="d-flex flex-row nav-link">
+        <div className="dFlex flexRow nav-link">
           <Link to="/blogs" className={`mr-20 `}>
             <h3>Blogs</h3>
           </Link>
@@ -31,7 +31,7 @@ function Nav() {
           <div
             // onMouseLeave={handleOut}
             // onMouseEnter={() => setPhone(false)}
-            className={`d-flex flex-row no-wrap mr-20 align-items-center justify-content-center ${styles.paragraphe}`}
+            className={`dFlex flexRow no-wrap mr-20 alignItemsCenter justifyContentCenter ${styles.paragraphe}`}
           >
             <FontAwesomeIcon icon={faPhone} className={styles.taillePhone} />
             {Device.isMobile ? "" : <p className={`mr-10 `}>06 34 26 64 00</p>}

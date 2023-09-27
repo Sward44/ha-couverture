@@ -367,7 +367,7 @@ function Clients() {
     );
   };
   return (
-    <div className="d-flex flex-column justify-content-center">
+    <div className="dFlex flexColumn justifyContentCenter">
       <h2>Clients</h2>
       <div class="container pb-5 mb-5">
         <div class="avis_titre">
@@ -375,13 +375,13 @@ function Clients() {
           <div class="line"></div>
         </div>
 
-        <div className="d-flex flex-column my-20">
-          <div className={`d-flex flex-row`}>
+        <div className="dFlex flexColumn my-20">
+          <div className={`dFlex flexRow`}>
             <div>
               {reviews.map((i, indexItem) => {
                 return (
                   <div key={indexItem} className={`p-20 ${styles.fondCard}`}>
-                    <div className="d-flex align-items-center">
+                    <div className="dFlex align-items-center">
                       <div className={styles.fondStars}>
                         {[...Array(5)].map((star, indexStars) => {
                           return (
@@ -400,10 +400,10 @@ function Clients() {
                         <h3>{i.review_title}</h3>
                       </div>
                     </div>
-                    <div className="d-flex flex-column ml-130 pb-10">
+                    <div className="dFlex flexColumn ml-130 pb-10">
                       <p> &#171;&nbsp;{i.review_text}&nbsp;&#187;</p>
                     </div>
-                    <div className="d-flex flex-row justify-content-right pb-10">
+                    <div className="dFlex flexRow justifyContentRight pb-10">
                       <p>
                         {" "}
                         {i.author_title && !i.author_entreprise_bolean && (
@@ -426,7 +426,7 @@ function Clients() {
                     </div>
 
                     {i.owner_answer && (
-                      <div className="d-flex flex-column ml-130 pb-20">
+                      <div className="dFlex flexColumn ml-130 pb-20">
                         <div className="mb-20">
                           <button
                             key={indexItem}
