@@ -16,7 +16,7 @@ function Nav() {
           Device.isMobile ? "" : "m-20"
         } alignItemsCenter ${styles.relatif}`}
       >
-        <div className="dFlex flexRow nav-link">
+        <div className={`${styles.displayFlex} flexRow nav-link`}>
           <Link to="/blogs" className={`mr-20 `}>
             <h3>Blogs</h3>
           </Link>

@@ -381,7 +381,7 @@ function Clients() {
               {reviews.map((i, indexItem) => {
                 return (
                   <div key={indexItem} className={`p-20 ${styles.fondCard}`}>
-                    <div className="dFlex align-items-center">
+                    <div className="dFlex alignItemsCenter">
                       <div className={styles.fondStars}>
                         {[...Array(5)].map((star, indexStars) => {
                           return (

@@ -1,5 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import styles from "./ImageButton.module.scss";
-import style from "../diaporama/Diaporama";
 
 function ImageButton({
   items,
@@ -11,10 +12,10 @@ function ImageButton({
   return (
     <>
       <button onClick={handleNext} className="button-gauche">
-        <i className="fa-solid fa-angle-left"></i>
+        <FontAwesomeIcon icon={faAngleLeft} size="2xl" />
       </button>
       <button onClick={handlePrev} className="button-droite">
-        <i className="fa-solid fa-angle-right"></i>
+        <FontAwesomeIcon icon={faAngleRight} size="2xl" />
       </button>
       <div className="containeurButtonIcon dFlex justify-around">
         {items.map((i, indexButton) => (

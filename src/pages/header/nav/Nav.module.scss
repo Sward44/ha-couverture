@@ -1,6 +1,12 @@
 @use "../../../styles/media-queries" as *;
 .relatif {
   position: relative;
+  .displayFlex {
+    display: flex;
+    h3 {
+      text-decoration: none;
+    }
+  }
   .paragraphe {
     position: absolute;
     justify-content: flex-start;

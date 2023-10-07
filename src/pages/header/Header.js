@@ -47,7 +47,7 @@ function Header() {
       <header>
         <div ref={ref}>
           <div
-            className={`dFlex flexRow flexFill ${
+            className={`dFlex flexRow  ${
               Device.isMobile ? `py-5 px-10` : `p-10`
             }`}
           >

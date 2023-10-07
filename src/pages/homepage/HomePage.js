@@ -5,6 +5,7 @@ import Diaporama from "./componants/diaporama/Diaporama";
 import Texte from "./componants/texte/Texte";
 import TexteButton from "./componants/button/TexteButton";
 import { contextDevice } from "../../components/context/contextDevice";
+import TexteCouverture from "./componants/texte/TexteCouverture";
 
 function HomePage() {
   const Device = useContext(contextDevice);
@@ -50,7 +51,7 @@ function HomePage() {
   return (
     <>
       <div
-        className={`containeur dFlex ${
+        className={`containeur shadowScale dFlex ${
           !Device.isDesktop && `flexColumnReverse`
         } justifyContentCenter `}
       >
@@ -68,6 +69,9 @@ function HomePage() {
           childFactory={childFactory}
           handleEveryImage={handleEveryImage}
         />
+      </div>
+      <div className={`containeur dFlex justifyContentCenter `}>
+        <TexteCouverture />
       </div>
       {addForm && <FormAdd handleForm={handleForm} />}
     </>
