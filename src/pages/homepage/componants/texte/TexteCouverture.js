@@ -16,7 +16,7 @@ function TexteCouverture() {
   };
 
   return (
-    <div className={`dFlex flexColumn ${styles.containeurImage}`}>
+    <div className={`${styles.containeurImage} `}>
       {couverture.map((i, index) => {
         return (
           <div key={index} className={`${styles.accordion}`}>
@@ -36,14 +36,14 @@ function TexteCouverture() {
                 </h3>
                 <FontAwesomeIcon
                   icon={faAngleDown}
-                  size="2xl"
+                  size="xl"
                   rotation={index !== accordion ? 180 : 0}
                   style={{ transition: "0.5s" }}
                   aria-hidden="true"
                 />
               </div>
               <div
-                className={``}
+                className={styles.accordionContent}
                 id={`panel${index}Content`}
                 aria-labelledby={`panel${index}Header`}
                 aria-hidden={index === accordion ? "false" : "true"}
