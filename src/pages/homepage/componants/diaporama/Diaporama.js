@@ -15,7 +15,7 @@ function Diaporama({
 }) {
   const Device = useContext(contextDevice);
   return (
-    <div className={`containeurImage`}>
+    <div className={`dFlex ${styles.containeurImage}`}>
       <ImageButton
         items={items}
         index={index}
@@ -23,17 +23,20 @@ function Diaporama({
         handlePrev={handlePrev}
         handleEveryImage={handleEveryImage}
       />
-
       <TransitionGroup childFactory={childFactory(direction)}>
         <CSSTransition
-          key={items[index].img}
+          in={false}
+          key={index}
           timeout={800}
-          classNames={direction}
+          classNames={{ direction }}
+          en
         >
           {Device.isMobile ? (
-            <img src={items[index].imgmobile} className={`image`} />
+            <img src={items[index].imgmobile} className={styles.image} />
+          ) : Device.isDesktop ? (
+            <img src={items[index].imglaptop} className={styles.image} />
           ) : (
-            <img src={items[index].img} className={`image`} />
+            <img src={items[index].img} className={styles.image} />
           )}
         </CSSTransition>
       </TransitionGroup>

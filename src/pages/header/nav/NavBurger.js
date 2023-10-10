@@ -32,7 +32,7 @@ function NavBurger() {
         timeout={800}
         classNames={styles}
       >
-        <div ref={ref} className={styles.navigation}>
+        <div ref={ref} className={`${styles.navigation} zIndex`}>
           <div className={styles.marginAround}>
             <Link to="/blogs" className={`${styles.positionLink}`}>
               <h3>Blogs</h3>

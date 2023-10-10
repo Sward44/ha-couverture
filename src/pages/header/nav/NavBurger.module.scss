@@ -8,8 +8,6 @@
     cursor: pointer;
     position: relative;
     &Active {
-      z-index: 8;
-
       span {
         background-color: transparent !important;
         &::before {
@@ -65,13 +63,15 @@
 }
 
 .navigation {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 7;
+  @include xs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
   &.enter {
     transform: translateX(100%);
     &Active,
@@ -90,7 +90,6 @@
   }
   .marginAround {
     margin: 15rem 10rem;
-    z-index: 7;
   }
   .positionLink {
     display: absolute;

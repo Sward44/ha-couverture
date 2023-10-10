@@ -1,3 +1,4 @@
+@use "animation" as *;
 @use "base" as *;
 @use "flex" as *;
 @use "main" as *;
@@ -16,248 +17,35 @@ body {
     background-size: 650px;
   }
 }
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+h2 {
 }
-header {
-  max-width: 1220px;
-  width: 100%;
-  margin: auto;
-  .stickyNav &-enter {
-    transition: position 0.3s;
-    &-active,
-    &-done {
-      position: sticky;
-    }
-  }
-  &-exit {
-    position: absolute;
-    &-active,
-    &-done {
-      transition: position 0.3s;
-    }
-  }
-  .nav-link {
-    @include xs {
-      display: none;
-    }
-    @include md {
-      display: none;
-    }
-  }
 
-  a,
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ul,
-  li {
-    color: var(--text-dark);
-    transition: color 0.3s;
-    &:hover {
-      transition: color 0.3s;
-      color: var(--shining);
-    }
-  }
-  h1 {
-    font-size: 5rem;
-    line-height: 8rem;
-    font-weight: 300;
-    @include xs {
-      font-size: 3rem;
-      line-height: 3.2rem;
-      letter-spacing: 1.2rem;
-    }
-    @include sm {
-      font-size: 4rem;
-      line-height: 4.3rem;
-      letter-spacing: 1.5rem;
-    }
-    @include md {
-      font-size: 5rem;
-      line-height: 5rem;
-      letter-spacing: 1.2rem;
-    }
-  }
-  p {
-    letter-spacing: 0.15rem;
-    font-size: 95%;
+.headerBox {
+  background-color: var(--fond-header);
+  box-shadow: 0px 2px 10px 1px var(--shadow);
+  z-index: 2;
+}
+
+.largeurHeader {
+  max-width: 1360px;
+  margin: auto;
+  padding: 0rem 3rem;
+  position: relative;
+  @include xs {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0 1vw;
   }
 }
 
 main {
-  max-width: 1220px;
+  max-width: 1300px;
   margin: auto;
-  width: 100%;
-  min-height: 68vh;
-  a {
-    color: var(--text-dark);
-    &:hover {
-      color: var(--text-dark);
-      opacity: 0.8;
-    }
-  }
-  .containeur {
-    margin: 5rem 2rem 2rem;
-  }
-  .shadowScale {
-    box-shadow: 5px 5px 10px 1px var(--shadow);
-    transition: 0.3s;
-    @include xs {
-      box-shadow: none;
-      background-color: transparent;
-    }
-    &:hover {
-      scale: 1.01;
-      box-shadow: 5px 8px 18px 4px var(--shadow);
-      @include xs {
-        scale: unset;
-      }
-    }
-    @include xs {
-      margin: 2rem 1.6rem;
-    }
-    .containeurTexte {
-      background-color: var(--primary);
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
-      @include xs {
-        border-radius: 10px;
-        box-shadow: 5px 8px 18px 4px var(--shadow);
-      }
-    }
-    .containeurImage {
-      position: relative;
-      background-color: transparent !important;
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
-      overflow: hidden;
-      min-width: 800px;
-      height: 600px;
-      @include xs {
-        min-width: 100%;
-        height: auto;
-        border-radius: 10px !important;
-        overflow: hidden;
-        margin-bottom: 2rem;
-        box-shadow: 5px 8px 18px 4px var(--shadow);
-      }
-      .containeurButtonIcon {
-        position: absolute;
-        top: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 5;
-        opacity: 0.6;
-        transition: opacity 0.3s;
-        @include xs {
-          top: 87%;
-        }
-      }
-      .button- {
-        &droite {
-          position: absolute;
-          top: 50%;
-          right: 5%;
-          opacity: 0;
-          z-index: 5;
-          transition: opacity 0.3s;
-        }
-        &gauche {
-          position: absolute;
-          top: 50%;
-          left: 5%;
-          opacity: 0;
-          z-index: 5;
-          transition: opacity 0.3s;
-        }
-      }
-      &:hover {
-        .button- {
-          &droite {
-            opacity: 0.7;
-            @include xs {
-              opacity: 0;
-            }
-          }
-          &gauche {
-            opacity: 0.7;
-            @include xs {
-              opacity: 0;
-            }
-          }
-        }
-        .containeurButtonIcon {
-          opacity: 0.9;
-        }
-      }
-      .image-gauche {
-        &-enter {
-          transform: translateX(-100%);
-          &-active,
-          &-done {
-            transform: translateX(0%);
-            transition: transform 0.8s ease;
-          }
-        }
-        &-exit {
-          position: absolute;
-          top: 0%;
-          left: 0%;
-          transform: translateX(0%);
-          &-active,
-          &-done {
-            transform: translateX(100%);
-            transition: transform 0.8s ease;
-          }
-        }
-      }
-
-      .image-droite {
-        width: 100%;
-        position: absolute;
-        &-enter {
-          transform: translateX(100%);
-          &-active,
-          &-done {
-            transform: translateX(0%);
-            transition: transform 0.8s;
-          }
-        }
-        &-exit {
-          position: absolute;
-          top: 0%;
-          left: 0%;
-          transform: translateX(0%);
-          &-active,
-          &done {
-            transform: translateX(-100%);
-            transition: transform 0.8s;
-          }
-        }
-      }
-
-      .image {
-        width: 100%;
-        @include xs {
-          width: min-content;
-        }
-      }
-    }
-  }
+  min-height: 100dvh;
 }
-// }
+
 .social-container {
   display: flex;
   justify-content: start;

@@ -6,12 +6,14 @@ import Texte from "./componants/texte/Texte";
 import TexteButton from "./componants/button/TexteButton";
 import { contextDevice } from "../../components/context/contextDevice";
 import TexteCouverture from "./componants/texte/TexteCouverture";
+import styles from "./HomePage.module.scss";
+import Header from "../header/Header";
 
 function HomePage() {
   const Device = useContext(contextDevice);
   const items = itemData;
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState("image-gauche");
+  const [direction, setDirection] = useState("imageGauche");
   const [addForm, setAddForm] = useState(false);
 
   const handleNext = () => {
@@ -21,12 +23,12 @@ function HomePage() {
     } else {
       setIndex(handleNext);
     }
-    setDirection("image-gauche");
+    setDirection("imageGauche");
   };
 
   const handlePrev = () => {
     setIndex((index + 1) % items.length);
-    setDirection("image-droite");
+    setDirection("imageDroite");
   };
 
   const childFactory = (direction) => (child) =>
@@ -37,10 +39,10 @@ function HomePage() {
   const handleEveryImage = (a) => {
     if (a > index) {
       setIndex(a);
-      setDirection("image-droite");
+      setDirection("imageDroite");
     } else if (a < index) {
       setIndex(a);
-      setDirection("image-gauche");
+      setDirection("imageGauche");
     }
   };
 
@@ -51,11 +53,17 @@ function HomePage() {
   return (
     <>
       <div
-        className={`containeur shadowScale dFlex ${
-          !Device.isDesktop && `flexColumnReverse`
+        className={`${styles.containeur} ${
+          Device.isLargeDesktop && styles.shadowScale
+        } dFlex ${
+          !Device.isLargeDesktop && `flexColumnReverse`
         } justifyContentCenter `}
       >
-        <div className={`containeurTexte dFlex flexColumn  px-20 py-50`}>
+        {Device.isMobile && <Header />}
+        <div
+          className={`${styles.containeurTexte} dFlex flexColumn`}
+          style={{ padding: "2.5vw" }}
+        >
           <Texte items={items} index={index} />
           <TexteButton handleForm={handleForm} />
         </div>
@@ -70,12 +78,15 @@ function HomePage() {
           handleEveryImage={handleEveryImage}
         />
       </div>
-      <div className={`containeur dFlex justifyContentCenter `}>
-        <TexteCouverture />
-      </div>
+
       {addForm && <FormAdd handleForm={handleForm} />}
     </>
   );
 }
 
 export default HomePage;
+{
+  /* <div className={`${styles.containeur} dFlex justifyContentCenter `}>
+        <TexteCouverture />
+      </div> */
+}

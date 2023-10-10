@@ -8,7 +8,8 @@ import TravauxDivers from "../../assets/img/TravauxDivers";
 export const itemData = [
   {
     img: "assets/img/couverture.webp",
-    imgmobile: "assets/img/couverture-1-1.webp",
+    imglaptop: "assets/img/couverture-16-9.webp",
+    imgmobile: "assets/img/couverture-9-16.webp",
     title: "Image 1",
     categorie: "Couverture",
     logo: Couverture(),
@@ -17,7 +18,8 @@ export const itemData = [
   },
   {
     img: "assets/img/zinguerie.webp",
-    imgmobile: "assets/img/zinguerie-1-1.webp",
+    imglaptop: "assets/img/zinguerie-16-9.webp",
+    imgmobile: "assets/img/zinguerie-9-16.webp",
     title: "Image 2",
     categorie: "Zinguerie",
     logo: Zinguerie(),
@@ -26,7 +28,8 @@ export const itemData = [
   },
   {
     img: "assets/img/nettoyage.webp",
-    imgmobile: "assets/img/nettoyage-1-1.webp",
+    imglaptop: "assets/img/nettoyage-16-9.webp",
+    imgmobile: "assets/img/nettoyage-9-16.webp",
     title: "Image 3",
     categorie: "Nettoyage",
     logo: Nettoyage(),
@@ -35,7 +38,8 @@ export const itemData = [
   },
   {
     img: "assets/img/isolation.webp",
-    imgmobile: "assets/img/isolation-1-1.webp",
+    imglaptop: "assets/img/isolation-16-9.webp",
+    imgmobile: "assets/img/isolation-9-16.webp",
     title: "Image 4",
     categorie: "Isolation",
     logo: Isolation(),
@@ -44,7 +48,8 @@ export const itemData = [
   },
   {
     img: "assets/img/charpente.webp",
-    imgmobile: "assets/img/charpente-1-1.webp",
+    imglaptop: "assets/img/charpente-16-9.webp",
+    imgmobile: "assets/img/charpente-9-16.webp",
     title: "Image 5",
     categorie: "Charpente",
     logo: Charpente(),
@@ -53,7 +58,8 @@ export const itemData = [
   },
   {
     img: "assets/img/travaux-divers.webp",
-    imgmobile: "assets/img/travaux-divers-1-1.webp",
+    imglaptop: "assets/img/travaux-divers-16-9.webp",
+    imgmobile: "assets/img/travaux-divers-9-16.webp",
     title: "Image 6",
     categorie: "Réparation diverses",
     logo: TravauxDivers(),

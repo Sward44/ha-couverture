@@ -14,7 +14,7 @@ function Nav() {
       <ul
         className={`dFlex flexRow ${
           Device.isMobile ? "" : "m-20"
-        } alignItemsCenter ${styles.relatif}`}
+        } alignItemsCenter`}
       >
         <div className={`${styles.displayFlex} flexRow nav-link`}>
           <Link to="/blogs" className={`mr-20 `}>
