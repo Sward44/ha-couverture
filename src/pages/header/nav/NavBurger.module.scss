@@ -1,8 +1,9 @@
 @use "../../../styles/media-queries" as *;
 
 .burger {
-  position: relative;
   @include xs {
+    position: relative;
+    z-index: 100;
     width: 3.6rem;
     height: 2.4rem;
     cursor: pointer;

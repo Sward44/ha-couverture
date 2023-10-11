@@ -1,4 +1,5 @@
 @use "../../../../styles/media-queries" as *;
+@use "../button/ImageButton.module" as *;
 
 .containeurImage {
   position: relative;
@@ -11,6 +12,13 @@
   min-width: 800px;
   width: 800px;
   height: 600px;
+  &:hover {
+    .buttonDroite,
+    .buttonGauche,
+    .containeurButtonIcon {
+      opacity: 0.8;
+    }
+  }
   @include xl {
     min-width: 920px;
     max-width: 1299px;
@@ -40,6 +48,55 @@
       height: 100%;
       inset: 0;
       object-fit: cover;
+    }
+  }
+  .buttonDroite,
+  .buttonGauche {
+    position: absolute;
+    top: 50%;
+    opacity: 0.3;
+    z-index: 1;
+    transition: opacity 0.3s;
+    @include xl {
+      top: 90%;
+    }
+    @include xs {
+      height: 90svh;
+      top: 72px;
+      width: 50%;
+      opacity: 0;
+    }
+  }
+  .buttonDroite {
+    right: 5%;
+    @include xl {
+      right: 20%;
+    }
+    @include xs {
+      right: 0%;
+    }
+  }
+  .buttonGauche {
+    left: 5%;
+    @include xl {
+      left: 20%;
+    }
+    @include xs {
+      left: 0%;
+    }
+  }
+
+  .containeurButtonIcon {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    @include xs {
+      opacity: 0.9;
+      top: 93%;
     }
   }
 }

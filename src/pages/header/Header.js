@@ -36,18 +36,28 @@ function Header() {
   // }, [handleNavigation]);
 
   return (
-    <header className={`headerBox`}>
-      <div className={`largeurHeader`}>
+    <header className={`${styles.headerBox}`}>
+      <div className={`${styles.largeurHeader}`}>
         <div
           className={`dFlex flexRow  ${
-            Device.isMobile ? `py-5 px-10` : `p-10`
+            Device.isMobile ? `py-5 px-10 justifyBetween` : `p-10`
           }`}
         >
-          <div className={`dFlex flexFill align-items-center`}>
+          <div
+            className={`dFlex ${
+              !Device.isMobile && `flexFill`
+            } align-items-center`}
+          >
             <Link to="/">{Device.isMobile ? <LogoFooter /> : <Logo />}</Link>
           </div>
 
-          {!Device.isMobile && <Nav />}
+          {Device.isMobile ? (
+            <div>
+              <h2>HA Couverture</h2>
+            </div>
+          ) : (
+            <Nav />
+          )}
           <NavBurger />
         </div>
       </div>

@@ -1,10 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/styles.scss";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Router";
+import WebFont from "webfontloader";
+
+WebFont.load({
+  google: {
+    families: ["Lato:300,400,700", "sans-serif"],
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

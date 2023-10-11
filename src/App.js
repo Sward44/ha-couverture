@@ -3,7 +3,6 @@ import Header from "./pages/header/Header";
 import Footer from "./pages/footer/Footer";
 import { useMediaQuery } from "react-responsive";
 import { contextDevice } from "./components/context/contextDevice";
-import styles from "./App.module.scss";
 
 export default function App() {
   const isMobile = useMediaQuery({ maxWidth: 480 });
