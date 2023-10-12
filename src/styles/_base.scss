@@ -7,7 +7,6 @@
 }
 
 :root {
-  --font-family: "Muli", sans-serif;
   --light: #f3eeec;
   --primary: #4476c2;
   --dark: #2980b9;
@@ -21,10 +20,29 @@
   --shadow: rgba(3, 3, 3, 0.15);
   --fond-card: rgba(255, 255, 255, 0.93);
   --fond-header: #fff;
-  --fs-h1: clamp(2rem, 8vw, 3rem);
-  --fs-h2: clamp(1.8rem, 7vw, 2.6rem);
-  --fs-h3: clamp(1.6rem, 6vw, 2.2rem);
-  --fs-p: clamp(1rem, 4vw, 1.4rem);
+  --fs-text: "Lato", sans-serif;
+  --fs-title: "PT Serif", "serif";
+  --fs-h1: clamp(2.8rem, 8vw, 3.4rem);
+  --fs-h2: clamp(2.4rem, 7vw, 2.8rem);
+  --fs-h3: clamp(2.1rem, 5vw, 2.3rem);
+  --fs-h4: clamp(1.9rem, 5vw, 2.2rem);
+  --fs-p: clamp(1.3rem, 3.5vw, 1.5rem);
+
+  @include xl {
+    --fs-h1: clamp(2.8rem, 8vw, 3.4rem);
+    --fs-h2: clamp(2.2rem, 7vw, 2.6rem);
+    --fs-h3: clamp(2.1rem, 5vw, 2.3rem);
+    --fs-h4: clamp(1.6rem, 1.5vw, 1.8rem);
+    --fs-p: clamp(1.3rem, 1.2vw, 1.4rem);
+  }
+
+  @include xs {
+    --fs-h1: clamp(2.2rem, 5vw, 2.5rem);
+    --fs-h2: clamp(1.9rem, 6vw, 2.5rem);
+    --fs-h3: clamp(1.3rem, 4vw, 1.8rem);
+    --fs-h4: clamp(1.3rem, 3vw, 1.6rem);
+    --fs-p: clamp(1.1rem, 3vw, 1.4rem);
+  }
 }
 
 html {
@@ -32,7 +50,6 @@ html {
 }
 
 body {
-  font-family: var(--font-family);
   color: var(--text);
   font-size: 1.6rem;
   padding: 0;
@@ -45,15 +62,34 @@ body {
   background-image: url("../pages/logo/logo.svg");
   background-size: 800px;
 }
-
-p,
-h1,
+h1 {
+  font-family: var(--fs-title);
+}
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+h4 {
+  font-size: var(--fs-h4);
+}
+p {
+  font-size: var(--fs-p);
+}
 h2,
 h3,
 h4,
 h5,
-h6 {
-  margin: 0.5rem 0;
+h6,
+p,
+ul,
+li,
+button {
+  font-family: var(--fs-text);
 }
 
 ul {

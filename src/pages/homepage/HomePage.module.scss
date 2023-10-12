@@ -1,13 +1,13 @@
 @use "../../styles/media-queries" as *;
 
 .containeur {
-  margin: 3vw 2.5vw;
+  margin: 3vw 2.5vh;
   max-width: fit-content;
   @include xl {
     margin: 2.5vw;
   }
   @include xs {
-    margin: 0;
+    margin: auto;
     min-width: 100vw;
     min-height: 100svh;
   }
@@ -18,21 +18,23 @@
     @include xl {
       position: absolute;
       z-index: 1;
+      margin: 0;
+      padding: 1vw 1.8vw;
       opacity: 0.8;
-      top: 25%;
-      left: 5%;
-      max-width: 400px;
-      min-height: 300px;
+      top: 16vw;
+      left: 8vh;
+      max-width: 350px;
+      min-height: 170px;
       border-radius: 10px;
-      margin-bottom: 1rem;
     }
     @include xs {
       position: absolute;
       border-radius: 10px !important;
       opacity: 0.8;
       z-index: 1;
-      bottom: 20vw;
-      margin: 1.5vw;
+      bottom: 22vw;
+      margin: 0 3.5vw;
+      padding: 4vw;
       border-radius: 0;
       box-shadow: 5px 8px 18px 4px var(--shadow);
     }

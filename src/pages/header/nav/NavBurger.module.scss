@@ -1,6 +1,27 @@
 @use "../../../styles/media-queries" as *;
 
 .burger {
+  @include sm {
+    position: relative;
+    z-index: 100;
+    width: 3.6rem;
+    height: 2.4rem;
+    cursor: pointer;
+    position: relative;
+    &Active {
+      span {
+        background-color: transparent !important;
+        &::before {
+          background-color: var(--light) !important;
+          transform: translateY(0) rotateZ(45deg) !important;
+        }
+        &::after {
+          background-color: var(--light) !important;
+          transform: translateY(0) rotateZ(-45deg) !important;
+        }
+      }
+    }
+  }
   @include xs {
     position: relative;
     z-index: 100;
@@ -22,33 +43,36 @@
       }
     }
   }
+
   span {
-    @include xs {
-      display: block;
-      width: 3.6rem;
-      height: 0.4rem;
-      background-color: var(--background);
-      border-radius: 0.2rem;
-      position: absolute;
-      top: 32%;
-      transform: translateY(-50%);
-      transition: background-color 0.5s;
-      &::before,
-      &::after {
-        content: "";
+    @include sm {
+      @include xs {
+        display: block;
+        width: 3.6rem;
+        height: 0.4rem;
+        background-color: var(--background);
         border-radius: 0.2rem;
         position: absolute;
-        width: 100%;
-        height: 0.4rem;
-        transition: transform 0.5s, background-color 0.5s !important;
-      }
-      &::before {
-        transform: translateY(-12px);
-        background-color: var(--background);
-      }
-      &::after {
-        transform: translateY(12px);
-        background-color: var(--background);
+        top: 32%;
+        transform: translateY(-50%);
+        transition: background-color 0.5s;
+        &::before,
+        &::after {
+          content: "";
+          border-radius: 0.2rem;
+          position: absolute;
+          width: 100%;
+          height: 0.4rem;
+          transition: transform 0.5s, background-color 0.5s !important;
+        }
+        &::before {
+          transform: translateY(-12px);
+          background-color: var(--background);
+        }
+        &::after {
+          transform: translateY(12px);
+          background-color: var(--background);
+        }
       }
     }
   }

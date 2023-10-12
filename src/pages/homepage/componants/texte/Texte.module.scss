@@ -1,3 +1,5 @@
+@use "../../../../styles/media-queries" as *;
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -10,8 +12,20 @@
 }
 .apparitionTitre {
   animation: fade-in 0.8s;
+  @include xl {
+    padding: 0 0 1vw;
+  }
+  @include xs {
+    padding: 0 0 4vw;
+  }
 }
 .apparitionTexte {
   animation: fade-in 0.8s 0.4s backwards;
   text-align: left;
+  @include xl {
+    padding: 0 0 1vw;
+  }
+  @include xs {
+    padding: 0 0 4vw;
+  }
 }

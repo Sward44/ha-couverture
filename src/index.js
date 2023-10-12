@@ -8,7 +8,7 @@ import WebFont from "webfontloader";
 
 WebFont.load({
   google: {
-    families: ["Lato:300,400,700", "sans-serif"],
+    families: ["Lato:300,400,700", "sans-serif", "PT Serif:700", "serif"],
   },
 });
 

@@ -40,7 +40,9 @@ function Header() {
       <div className={`${styles.largeurHeader}`}>
         <div
           className={`dFlex flexRow  ${
-            Device.isMobile ? `py-5 px-10 justifyBetween` : `p-10`
+            Device.isMobile
+              ? `py-5 px-10 justifyBetween alignItemsCenter`
+              : `p-10`
           }`}
         >
           <div
@@ -53,10 +55,10 @@ function Header() {
 
           {Device.isMobile ? (
             <div>
-              <h2>HA Couverture</h2>
+              <h2 className={styles.fontStyle}>HA COUVERTURE</h2>
             </div>
           ) : (
-            <Nav />
+            !Device.isTablet && <Nav />
           )}
           <NavBurger />
         </div>

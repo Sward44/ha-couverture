@@ -60,10 +60,7 @@ function HomePage() {
         } justifyContentCenter `}
       >
         {Device.isMobile && <Header />}
-        <div
-          className={`${styles.containeurTexte} dFlex flexColumn`}
-          style={{ padding: "2.5vw" }}
-        >
+        <div className={`${styles.containeurTexte} dFlex flexColumn`}>
           <Texte items={items} index={index} />
           <TexteButton handleForm={handleForm} />
         </div>

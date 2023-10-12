@@ -12,7 +12,7 @@ function TexteButton({ handleForm }) {
         <p>En savoir plus...</p>
       </div>
       <button onClick={handleForm}>
-        <h3>Demande de devis</h3>
+        <h4>Demande de devis</h4>
       </button>
     </>
   );

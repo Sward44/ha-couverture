@@ -13,7 +13,7 @@ function Nav() {
     <>
       <ul
         className={`dFlex flexRow ${
-          Device.isMobile ? "" : "m-20"
+          Device.isMobile || Device.isTablet ? "" : "m-20"
         } alignItemsCenter`}
       >
         <div className={`${styles.displayFlex} flexRow nav-link`}>
@@ -34,7 +34,11 @@ function Nav() {
             className={`dFlex flexRow no-wrap mr-20 alignItemsCenter justifyContentCenter ${styles.paragraphe}`}
           >
             <FontAwesomeIcon icon={faPhone} className={styles.taillePhone} />
-            {Device.isMobile ? "" : <p className={`mr-10 `}>06 34 26 64 00</p>}
+            {Device.isMobile || Device.isTablet ? (
+              ""
+            ) : (
+              <p className={`mr-10 `}>06 34 26 64 00</p>
+            )}
           </div>
         </a>
         <Link to="/localisation">
